@@ -17,9 +17,6 @@ module.exports = function(sequelize, DataTypes) {
       },
       stockName: {
         type: DataTypes.STRING,
-        validate: {
-          isEmail: true
-        },
         allowNull: false
       },
       Exchange: {
