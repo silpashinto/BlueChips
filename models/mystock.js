@@ -7,17 +7,17 @@ module.exports = function(sequelize, DataTypes) {
           autoIncrement: true,
           primaryKey: true
         },
-        userId: {
-          type: DataTypes.INTEGER,
-          allowNull: false,
-          validate: {
-            len: [1]
-          }
-        },
-        mystockTicker: {
-          type: DataTypes.STRING,
-          allowNull: false
-        },
+        // userId: {
+        //   type: DataTypes.INTEGER,
+        //   allowNull: false,
+        //   validate: {
+        //     len: [1]
+        //   }
+        // },
+        // mystockTicker: {
+        //   type: DataTypes.STRING,
+        //   allowNull: false
+        // },
         stockstatusId: {
           type: DataTypes.INTEGER,
           allowNull: false,
@@ -37,6 +37,17 @@ module.exports = function(sequelize, DataTypes) {
         freezeTableName: true
       }
     );  
+
+    Mystock.associate = function(models) {
+      Mystock.belongsTo(models.User, {
+        foreignKey: "userId",
+        targetKey: "userId"
+      });
+      Mystock.belongsTo(models.Stock, {
+        foreignKey: "stockTicker",
+        targetKey: "stockTicker"
+      });
+    };
    
     return Mystock;
   };
