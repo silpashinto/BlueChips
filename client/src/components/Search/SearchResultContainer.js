@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import SearchForm from "./SearchForm";
 import ResultList from "./ResultList";
-import API from "../utils/API";
+import API from "../../utils/API";
 
 class SearchResultContainer extends Component {
   state = {
@@ -10,11 +10,11 @@ class SearchResultContainer extends Component {
   };
 
   // When this component mounts, search the Giphy API for pictures of kittens
-  componentDidMount() {
-    this.searchGiphy("kittens");
-  }
+  // componentDidMount() {
+  //   this.searchStocks("");
+  // }
 
-  searchGiphy = query => {
+  searchStocks = query => {
     API.search(query)
       .then(res => this.setState({ results: res.data.data }))
       .catch(err => console.log(err));
@@ -31,7 +31,7 @@ class SearchResultContainer extends Component {
   // When the form is submitted, search the Giphy API for `this.state.search`
   handleFormSubmit = event => {
     event.preventDefault();
-    this.searchGiphy(this.state.search);
+    this.searchStocks(this.state.search);
   };
 
   render() {
