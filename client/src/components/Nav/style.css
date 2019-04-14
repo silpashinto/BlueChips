@@ -1,0 +1,15 @@
+.logo{
+    height: 100px;
+}
+.heading{
+    font-family: sans-serif;
+    font-size: 3.4rem;
+    background: url("../../images/Stocks_Hero-1920x1138.jpg");
+    font-variant: small-caps;
+    color: #FFFFFF;
+    text-shadow: #476db4 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px
+}
+.items{
+    font-size: 1.2rem;
+    
+}
