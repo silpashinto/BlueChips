@@ -25,6 +25,8 @@ class Home extends Component {
   render() {
     return (
       <Container fluid>
+
+
         <Row>
           <Col size="md-12">
             <Jumbotron>
@@ -58,17 +60,19 @@ class Home extends Component {
             </Col> 
         </Row>
 
+
         <Row>
             <Col size="md-12">
-        <footer>
 
-            <h3> Footer stuff here !</h3>
+            <footer>
 
-        </footer>
+                <h3> Footer stuff here !</h3>
+
+            </footer>
 
 
-      </Col>
-  </Row>
+            </Col>
+        </Row>
 
       </Container>
     );
