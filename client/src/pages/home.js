@@ -62,7 +62,7 @@ class Home extends Component {
             <Col size="md-12">
         <footer>
 
-            <h3> Footer stuff here !</h3>
+            <h3> Footer stuff here ffffffffffffffffffffffffffffffff !</h3>
 
         </footer>
 

@@ -1,0 +1,12 @@
+.btn {
+    margin: 5px;
+
+}
+
+.searchResults {
+    visibility: hidden;
+}
+
+.searchResultsNotFound {
+    visibility: hidden;
+}

@@ -6,6 +6,7 @@ import API from "../../utils/API";
 class Searches extends Component {
   state = {
     search: "",
+    showResults: false,
     results: []
   };
 
@@ -15,10 +16,16 @@ class Searches extends Component {
   // }
 
   searchStocks = query => {
-    API.search(query)
-      .then(res => this.setState({ results: res.data }))
+    if (query !== '') {
+      API.search(query)
+      .then (res => this.setState({ results: res.data, showResults: true}),
+      )
       .catch(err => console.log(err));
+    } else {
+      alert("Please enter a stock ticker to search ...");
+    } 
   };
+    
 
   handleInputChange = event => {
     const name = event.target.name;
@@ -28,11 +35,22 @@ class Searches extends Component {
     });
   };
 
-  // When the form is submitted, search the Giphy API for `this.state.search`
+  // When the form is submitted, search the API for `this.state.search`
   handleFormSubmit = event => {
     event.preventDefault();
     this.searchStocks(this.state.search);
   };
+
+
+  // When the clear button clicked, reset the search API form and hide search results div
+  handleFormClear = event => {
+    event.preventDefault();
+    this.setState({results: []});
+    this.setState({search: ''});
+    this.setState({showResults: false});
+    
+
+    };
 
   render() {
     return (
@@ -42,7 +60,7 @@ class Searches extends Component {
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
         />
-        <ResultList results={this.state.results} />
+        <ResultList results={this.state.results} showResults={this.state.showResults} />
       </div>
     );
   }
