@@ -6,7 +6,7 @@ function Nav() {
   return (
     <div>
       <nav className="nav nav-pills nav-fill">
-        <img src={image1} alt="logo" className="img-thumbnail logo"></img>
+        {/* <img src={image1} alt="logo" className="img-thumbnail logo"></img> */}
         <a className="nav-item nav-link heading" href="#">Blue Chips
       </a>
         {/* <small> Stock Tracker</small> */}

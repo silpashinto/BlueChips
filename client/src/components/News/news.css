@@ -4,5 +4,9 @@
     color: white;
     background-color: gray;
     text-align: center;
-}
-
+ }
+ 
+ .newsResults {
+    height:300px;
+    overflow-y: scroll;
+ }

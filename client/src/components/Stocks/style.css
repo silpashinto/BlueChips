@@ -1,0 +1,16 @@
+.delete-btn {
+  float: right;
+  color: #e74944;
+}
+.stkTable{
+  max-width: 50rem;
+  float: left;
+  font-size: 13px;
+  color: black;
+}
+.bg-light{
+  background-color: #68aea1!important;
+}
+.card-header{
+  font-size: 20px;
+}

@@ -9,6 +9,7 @@ function ResultList(props) {
         <h3> Stock Market News </h3>
       </div>
       <div>
+        <div className="newsResults">
       {/* <div className="table newsResults" style={{visibility: "visible" }}>
           <table className="table">
             <thead>
@@ -24,7 +25,7 @@ function ResultList(props) {
             <tbody>
             </tbody>
             </table> */}
-            <ul>
+            <ul id="list-example">
               {props.results.map( result => {
                 return (
                   <div>
@@ -45,6 +46,7 @@ function ResultList(props) {
                 // ) */}
               })}
             </ul>
+            </div>
 
           
         </div>
