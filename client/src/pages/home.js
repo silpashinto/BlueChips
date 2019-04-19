@@ -17,11 +17,8 @@ class Home extends Component {
               <Stocks />
           </Col>
           <Col size="md-4">
-            <Jumbotron>
               <News />                       
-              </Jumbotron>              
-          </Col>
-         
+          </Col>         
         </Row>
         <Row>
           <Col size="md-12">          

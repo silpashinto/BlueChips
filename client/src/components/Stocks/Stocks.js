@@ -1,5 +1,7 @@
 import React from "react";
 import "./style.css";
+import { Link } from "react-router-dom";
+
 
 function Stocks(props, type) {
   console.log(props[0]);
@@ -27,7 +29,7 @@ function Stocks(props, type) {
               return (
                 <tbody>
                   <tr>
-                    <th scope="row">{item.symbol}<br /><small>{item.companyName}</small></th>
+                    <th scope="row"><Link to={"/stock/"+item.symbol}>{item.symbol}<br /><small>{item.companyName}</small></Link></th>
                     <td>{item.latestPrice}</td>
                     <td>{item.change}</td>
                     <td>{item.changePercent}</td>
