@@ -35,8 +35,8 @@ function Stocks(props, type) {
                     <td>{item.changePercent}</td>
                     <td>{item.iexVolume}</td>
                     <td>{item.avgTotalVolume}</td>
-                    <td><i class="fa fa-eye fa-2x" aria-hidden="true"></i></td>
-                    <td><i class="fa fa-briefcase fa-2x" aria-hidden="true"></i></td>
+                    <td><i className="fa fa-eye fa-2x" aria-hidden="true"></i></td>
+                    <td><i className="fa fa-briefcase fa-2x" aria-hidden="true"></i></td>
 
                   </tr>
                 </tbody>
