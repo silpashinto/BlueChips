@@ -5,7 +5,7 @@ function ResultList(props) {
   console.log("news props", props);
   return (
         <div id="tickr-box">
-          <div class="tickr-title">Latest News</div>
+          <div className="tickr-title">Latest News</div>
           <div id="tickr-scroll">
           <ul>
           {props.results.map(result => {

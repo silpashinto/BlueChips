@@ -14,3 +14,32 @@
 .card-header{
   font-size: 20px;
 }
+.stkTable a{
+  color: white;
+}
+.my-4{
+  border-top: 7px solid rgba(0,0,0,.1);
+  border-color: red;
+}
+.line{
+  border-top: 7px solid rgba(0,0,0,.1);
+  border-color:gray;
+
+}
+.stockprofilecard{
+  width: 18rem;
+  float: left;
+  font-size: 13px;
+  border: none;
+}
+.stockprofilecard li{
+  padding: 2px;
+}
+.summary{
+  border-bottom:5px solid #dee2e6;
+}
+.vals{
+  float: right;
+    padding-right: 20px;
+    font-weight: bolder;
+}
