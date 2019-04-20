@@ -29,6 +29,10 @@ export default {
   getGainers:function(){
     console.log(GAINERSURL);
     return axios.get(GAINERSURL);
+  },
+  getChart6m: function(query) {
+    console.log("chart query is " ,BASEURL + query);
+    return axios.get(BASEURL + query + '/chart/6m');
   }
 
 };

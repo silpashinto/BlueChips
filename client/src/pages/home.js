@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Jumbotron from "../components/Jumbotron";
-import API from "../utils/API";
-import image1 from "../images/bluechips.png"
+// import Jumbotron from "../components/Jumbotron";
+// import API from "../utils/API";
+// import image1 from "../images/bluechips.png"
 import { Col, Row, Container } from "../components/Grid";
 import Searches from "../components/Search/SearchResultContainer";
 import News from "../components/News/NewsResultContainer";

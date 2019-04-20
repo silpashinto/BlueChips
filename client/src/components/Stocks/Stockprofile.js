@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 import Moment from 'react-moment';
 import 'moment-timezone';
 
 function Stockorofile(props) {
-    console.log(props.childrens);
+    console.log(props);
     return (
         <div className="table-responsive">
             <hr className="my-4" />
@@ -21,7 +21,7 @@ function Stockorofile(props) {
             </div><br/>
             <ul className="nav nav-tabs summary">            
                 <li className="nav-item">
-                    <a className="nav-link btn-primary" href="#">Summary</a>
+                    <Link className="nav-link btn-primary" to="#">Summary</Link>
                 </li>
                 </ul>
                 <ul className="nav nav-tabs justify-content-end"> 
