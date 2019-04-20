@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function Stocks(props, type) {
   console.log(props[0]);
   return (
-   
+
     <div className="card text-white bg-light mb-3 stkTable">
       <div className="card-header">{type}</div>
       <div className="card-body">
@@ -29,7 +29,7 @@ function Stocks(props, type) {
               return (
                 <tbody>
                   <tr>
-                    <th scope="row"><Link to={"/stock/"+item.symbol}>{item.symbol}<br /><small>{item.companyName}</small></Link></th>
+                    <th scope="row"><Link to={"/stock/" + item.symbol}>{item.symbol}<br /><small>{item.companyName}</small></Link></th>
                     <td>{item.latestPrice}</td>
                     <td>{item.change}</td>
                     <td>{item.changePercent}</td>
