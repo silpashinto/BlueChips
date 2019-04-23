@@ -8,12 +8,14 @@ function Chart(props) {
 
    {props.props.map( result =>{
        close.push(result.close);
+       return null;
    })};
 
    let volume = []
 
    {props.props.map( result =>{
        volume.push(result.volume / 1000);
+       return null;
    })};
 
    let chartData = {

@@ -2,7 +2,8 @@ const router = require("express").Router();
 const stocksController = require("../../controllers/stocksController");
 
 // Matches with "/api/stocks"
-router.route("/")
+router
+  .route("/")
   .get(stocksController.findAll)
   .post(stocksController.create);
 
@@ -15,8 +16,8 @@ router
 
   // Matches with "/api/stocks/:stockstatus"
 router
-.route("/:stockstatus")
-.get(stocksController.findByStatus);
+  .route("/:stockstatus")
+  .get(stocksController.findByStatus);
 
 
 module.exports = router;
