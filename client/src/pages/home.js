@@ -7,7 +7,9 @@ import Searches from "../components/Search/SearchResultContainer";
 import News from "../components/News/NewsResultContainer";
 import Stocks from "../components/Stocks";
 class Home extends Component {
+
  
+
   render() {
     return (
       <Container>
