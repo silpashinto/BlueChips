@@ -2,18 +2,25 @@ import React, { Component } from "react";
 import SearchForm from "./SearchForm";
 import ResultList from "./ResultList";
 import API from "../../utils/API";
+import Modal from 'react-awesome-modal';
 
 class Searches extends Component {
   state = {
     search: "",
     showResults: false,
+    modal: false,
     results: []
   };
 
-  // When this component mounts, search the Giphy API for pictures of kittens
-  // componentDidMount() {
-  //   this.searchStocks("");
-  // }
+ 
+  closeModal() {
+    this.setState({modal: false});
+  }
+
+  showModal() {
+    this.setState({modal: true});
+  };
+
 
   searchStocks = query => {
     if (query !== '') {
@@ -22,7 +29,8 @@ class Searches extends Component {
       )
       .catch(err => console.log(err));
     } else {
-      alert("Please enter a stock ticker to search ...");
+      // alert("Please enter a stock ticker to search ...");
+      this.showModal();
     } 
   };
     
@@ -60,10 +68,18 @@ class Searches extends Component {
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
         />
+        <Modal visible={this.state.modal} width="400" height="300" effect="fadeInUp" onClickAway={() => this.closeModal()}>
+                <div>
+                    <h1>Stock Search Error</h1>
+                    <h3>Please be sure to enter a stock ticker symbol !</h3>
+                    <a href="javascript:void(0);" onClick={() => this.closeModal()}>Close</a>
+                </div>
+            </Modal>
         <ResultList results={this.state.results} showResults={this.state.showResults} />
       </div>
     );
-  }
-}
+  
+  } 
+};
 
 export default Searches;

@@ -7,6 +7,7 @@ const GAINERSURL ="https://api.iextrading.com/1.0/stock/market/list/gainers";
 
 // Export an object with a "search" methods that searches the API for the passed stock ticker or get the news
 export default {
+  
   search: function(query) {
     console.log(BASEURL + query + '/quote');
     if (query!=="") {
@@ -42,13 +43,13 @@ export default {
     return axios.post("/api/user/signup", userData);
   },
   getHoldings: function(userData){
-    return axios.post("/api/stock/holdings", userData);
+    return axios.get("/api/stock/holdings", userData);
   },
   getWatchlist: function(userData){
-    return axios.post("/api/stock/watchlist", userData);
+    return axios.get("/api/stock/watchlist", userData);
   },
   getStockById: function(Stockid){
-    return axios.post("/api/stock/:id", Stockid);
+    return axios.get("/api/stock/:id", Stockid);
   }
 
 };
