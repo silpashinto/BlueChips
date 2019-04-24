@@ -8,7 +8,7 @@
 .tickr-title 
 	{
 	color: #FFFFFF;
-	font: bold 18px arial, sans-serif;
+	font: bold 20px arial, sans-serif;
 	background: #2A75C1; 
 	padding: 5px;
 	-webkit-border-radius: 4px;
@@ -40,7 +40,7 @@
 #tickr-scroll li 
 		{
 		color: #FFFFFF;
-		font: normal 10px arial, sans-serif;
+		font: normal 20px arial, sans-serif;
 		line-height: 26px;
 		}
 

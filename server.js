@@ -9,6 +9,7 @@ var session = require("express-session");
 var passport = require("./config/passport");
 var routes = require("./routes");
 
+
 // Requiring our models for syncing
 var db = require("./models");
 
@@ -45,3 +46,4 @@ db.sequelize.sync(syncOptions).then(function() {
     console.log(`🌎 ==> API server now on port ${PORT}!`);
   });
 });
+
