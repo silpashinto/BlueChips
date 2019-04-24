@@ -1,9 +1,10 @@
 const router = require("express").Router();
 const stockRoutes = require("./stocks");
-// const holdingsRoute = require('./holdings');
+const userRoutes = require('./user');
 
-// Book routes
+
+// stocks routes
 router.use("/stocks", stockRoutes);
-// router.use('/holdings', holdingsRoute);
+router.use("/user", userRoutes);
 
 module.exports = router;

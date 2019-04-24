@@ -37,6 +37,18 @@ export default {
   getHoldings: function() {
     console.log("getting holdings from http://localhost:3000/holdings");
     return axios.get("http://localhost:3000/holdings");
+  },
+  signUp: function(userData){
+    return axios.post("/api/user/signup", userData);
+  },
+  getHoldings: function(userData){
+    return axios.post("/api/stock/holdings", userData);
+  },
+  getWatchlist: function(userData){
+    return axios.post("/api/stock/watchlist", userData);
+  },
+  getStockById: function(Stockid){
+    return axios.post("/api/stock/:id", Stockid);
   }
 
 };

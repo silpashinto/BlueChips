@@ -3,15 +3,25 @@ const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
+var passport = require("passport");
+var session = require("express-session");
+// Requiring passport as we've configured it
+var passport = require("./config/passport");
+var routes = require("./routes");
 
 
 // Requiring our models for syncing
 var db = require("./models");
 
-
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// We need to use sessions to keep track of our user's login status
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+//Passport initialize middleware
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -19,8 +29,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Define API routes here
-require("./routes/api/holdings.js")(app);
-
+app.use(routes);
 
 // Send every other request to the React app
 // Define any API routes before this runs
