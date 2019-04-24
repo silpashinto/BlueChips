@@ -7,10 +7,10 @@ var passport = require("passport");
 var session = require("express-session");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
+var routes = require("./routes");
 
 // Requiring our models for syncing
 var db = require("./models");
-
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -28,6 +28,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Define API routes here
+app.use(routes);
 
 // Send every other request to the React app
 // Define any API routes before this runs

@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import Modal from 'react-awesome-modal';
 import "./style.css";
 import Deletebutton from "../DeleteBtn";
-import axios from "axios";
 import API from "../../utils/API"
 
 class Nav extends Component {
@@ -34,31 +33,19 @@ class Nav extends Component {
 
     // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
     alert(`Hello ${this.state.email} ${this.state.password}`);
-   var userData = {
-      email: this.state.email,
-      password: this.state.password
-    };
-
-    if (!userData.email || !userData.password) {
-      return;
-    }
-
+  
     if(this.state.action === "signIn"){ 
     // If we have an email and password we run the loginUser function and clear the form
-      this.loginUser(userData.email, userData.password);
+      //this.loginUser(userData.email, userData.password);
     }
     else{
-      axios.post('/signup', {
-        email: userData.email,
-        password: userData.password
+      API.signUp({
+        userName:this.state.email,
+        email: this.state.email,
+        password: this.state.password
       })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-
+        .then(res => console.log("user create"))
+        .catch(err => console.log(err));
     }
     this.setState({
       email: "",

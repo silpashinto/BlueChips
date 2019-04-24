@@ -1,23 +1,21 @@
 const router = require("express").Router();
 const stocksController = require("../../controllers/stocksController");
 
-// Matches with "/api/stocks"
+// Matches with "/api/stocks/holdings"
 router
-  .route("/")
-  .get(stocksController.findAll)
-  .post(stocksController.create);
+  .route("/holdings")
+  .post(stocksController.findAll);
 
-// Matches with "/api/stocks/:id"
+// Matches with "/api/stocks/watchlist"
+router
+  .route("/watchlist")
+  .post(stocksController.findAll);
+  
+
+  // Matches with "/api/stocks/:id"
 router
   .route("/:id")
-  .get(stocksController.findById)
-  .put(stocksController.update)
-  .delete(stocksController.remove);
-
-  // Matches with "/api/stocks/:stockstatus"
-router
-  .route("/:stockstatus")
-  .get(stocksController.findByStatus);
+  .get(stocksController.findById);
 
 
 module.exports = router;
