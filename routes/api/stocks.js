@@ -4,12 +4,12 @@ const stocksController = require("../../controllers/stocksController");
 // Matches with "/api/stocks/holdings"
 router
   .route("/holdings")
-  .post(stocksController.findAll);
+  .get(stocksController.findAll);
 
 // Matches with "/api/stocks/watchlist"
 router
   .route("/watchlist")
-  .post(stocksController.findAll);
+  .get(stocksController.findAll);
   
 
   // Matches with "/api/stocks/:id"
