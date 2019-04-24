@@ -1,12 +1,27 @@
-const router = require("express").Router();
-const stocksController = require("../../controllers/stocksController");
+// const router = require("express").Router();
+// Requiring our Todo model
+var db = require("../../models");
+
+
+// const stocksController = require("../../controllers/stocksController");
 
 // Matches with "/holdings"
-router.route("/holdings")
-  .get(stocksController.findAll)
-  .post(stocksController.create);
+// router.route("/holdings")
+//   .get(stocksController.findAll)
+//   .post(stocksController.create);
 
-  
+
+module.exports = function(app) {
+
+// GET route for getting all of the stocks
+app.get("/holdings", function(req, res) {
+  db.MyStock.findAll({})
+    .then(function(dbPost) {
+      res.json(dbPost);
+    });
+});
+
+};
 // // Matches with "/api/stocks/:id"
 // router
 //   .route("/:id")
@@ -20,4 +35,4 @@ router.route("/holdings")
 // .get(stocksController.findByStatus);
 
 
-module.exports = router;
+// module.exports = router;
