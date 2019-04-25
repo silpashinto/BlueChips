@@ -127,7 +127,7 @@ class Nav extends Component {
       </div>
     }
     else {
-      nav = <InsideNav />
+      nav = <InsideNav userid={this.state.UserId} />
     }
     return (
       <div>{this.state.userId}

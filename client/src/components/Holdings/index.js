@@ -6,7 +6,8 @@ import "./holdings.css";
 class Holdings extends Component {
     
     state = {
-        holdings: []
+        holdings: [],
+        userId: this.props.match.params.userid
     };
 
     // When the component mounts, get holdings
