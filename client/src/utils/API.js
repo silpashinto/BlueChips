@@ -42,14 +42,14 @@ export default {
   signUp: function(userData){
     return axios.post("/api/user/signup", userData);
   },
-  getHoldings: function(userData){
-    return axios.get("/api/stock/holdings", userData);
+  getHoldings: function(){
+    return axios.get("/api/stocks/holdings");
   },
   getWatchlist: function(userData){
-    return axios.get("/api/stock/watchlist", userData);
+    return axios.get("/api/stocks/watchlist", userData);
   },
   getStockById: function(Stockid){
-    return axios.get("/api/stock/:id", Stockid);
+    return axios.get("/api/stocks/:id", Stockid);
   }
 
 };

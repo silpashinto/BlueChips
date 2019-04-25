@@ -3,7 +3,7 @@ const stockRoutes = require("./stocks");
 const userRoutes = require('./user');
 
 
-// stocks routes
+// routes
 router.use("/stocks", stockRoutes);
 router.use("/user", userRoutes);
 
