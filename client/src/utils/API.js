@@ -43,16 +43,16 @@ export default {
     return axios.post("/api/user/signup", userData);
   },
   getHoldings: function(userData){
-    return axios.get("/api/stock/holdings", userData);
+    return axios.get("/api/stocks/holdings", userData);
   },
   getWatchlist: function(userData){
-    return axios.get("/api/stock/watchlist", userData);
+    return axios.get("/api/stocks/watchlist", userData);
   },
   getStockById: function(Stockid){
     return axios.get("/api/stocks/:id", Stockid);
   },
   signIn: function(userData){
-    return axios.post("/api/user/signup", userData);
+    return axios.post("/api/user/signin", userData);
   }
 
 };
