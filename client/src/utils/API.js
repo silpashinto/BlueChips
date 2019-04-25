@@ -15,7 +15,7 @@ export default {
     }   
   },
   getNews: function(){
-    let query = "market/news/last/10";
+    let query = "market/news/last/5";
     console.log(BASEURL + query);
     return axios.get(BASEURL + query);
   },
@@ -50,6 +50,9 @@ export default {
   },
   getStockById: function(Stockid){
     return axios.get("/api/stock/:id", Stockid);
-  }
+  },
+  signIn: function(userData){
+    return axios.post("/api/user/signin", userData);
+  },
 
 };
