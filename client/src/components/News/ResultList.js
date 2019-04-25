@@ -11,7 +11,7 @@ function ResultList(props) {
           {props.results.map(result => {
             return (
               
-                <li><h3>{result.headline}</h3>{result.summary}</li>
+                <li><br></br><h4>{result.headline}</h4>{result.summary}</li>
             )
             }
           )}

@@ -25,15 +25,14 @@ class Searches extends Component {
   searchStocks = query => {
     if (query !== '') {
       API.search(query)
-      .then (res => this.setState({ results: res.data, showResults: true}),
-      )
-      .catch(err => console.log(err));
+      .then (res => this.setState({ results: res.data, showResults: true}))
+      .catch(err => this.showModal());
+  
     } else {
-      // alert("Please enter a stock ticker to search ...");
-      this.showModal();
-    } 
-  };
     
+      this.showModal();
+    }
+  };   
 
   handleInputChange = event => {
     const name = event.target.name;
@@ -58,7 +57,7 @@ class Searches extends Component {
     this.setState({showResults: false});
     
 
-    };
+  };
 
   render() {
     return (
@@ -71,7 +70,7 @@ class Searches extends Component {
         <Modal visible={this.state.modal} width="400" height="300" effect="fadeInUp" onClickAway={() => this.closeModal()}>
                 <div>
                     <h1>Stock Search Error</h1>
-                    <h3>Please be sure to enter a stock ticker symbol !</h3>
+                    <h3>Please be sure to enter a valid stock ticker symbol !</h3>
                     <a href="javascript:void(0);" onClick={() => this.closeModal()}>Close</a>
                 </div>
             </Modal>
