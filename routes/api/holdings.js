@@ -1,6 +1,6 @@
 // const router = require("express").Router();
-// Requiring our Todo model
-var db = require("../../models");
+// // Requiring our Todo model
+// var db = require("../../models");
 
 
 // const stocksController = require("../../controllers/stocksController");
@@ -11,17 +11,17 @@ var db = require("../../models");
 //   .post(stocksController.create);
 
 
-module.exports = function(app) {
+// module.exports = function(app) {
 
-// GET route for getting all of the stocks
-app.get("/holdings", function(req, res) {
-  db.MyStock.findAll({})
-    .then(function(dbPost) {
-      res.json(dbPost);
-    });
-});
+// // GET route for getting all of the stocks
+// app.get("/holdings", function(req, res) {
+//   db.MyStock.findAll({})
+//     .then(function(dbPost) {
+//       res.json(dbPost);
+//     });
+// });
 
-};
+// };
 // // Matches with "/api/stocks/:id"
 // router
 //   .route("/:id")
