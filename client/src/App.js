@@ -14,6 +14,8 @@ function App() {
           <Route exact path="/stock/:symbol" component={Stock} />
           <Route exact path="/" component={Home} />
          <Route exact path='/holdings' component={Holdings} />
+         <Route exact path='/signout' component={Home} />
+
         </Switch>
       </div>
     </Router>
