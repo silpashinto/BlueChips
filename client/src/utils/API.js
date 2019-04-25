@@ -15,7 +15,7 @@ export default {
     }   
   },
   getNews: function(){
-    let query = "market/news/last/5";
+    let query = "market/news/last/10";
     console.log(BASEURL + query);
     return axios.get(BASEURL + query);
   },
@@ -53,6 +53,6 @@ export default {
   },
   signIn: function(userData){
     return axios.post("/api/user/signin", userData);
-  } 
+  }
 
 };
