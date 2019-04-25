@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var Mystock = sequelize.define(
+    var MyStock = sequelize.define(
       "MyStock",
       {
         mystockId: {
@@ -38,17 +38,17 @@ module.exports = function(sequelize, DataTypes) {
       }
     );  
 
-    Mystock.associate = function(models) {
-      Mystock.belongsTo(models.User, {
+    MyStock.associate = function(models) {
+      MyStock.belongsTo(models.User, {
         foreignKey: "userId",
         targetKey: "userId"
       });
-      Mystock.belongsTo(models.Stock, {
+      MyStock.belongsTo(models.Stock, {
         foreignKey: "stockTicker",
         targetKey: "stockTicker"
       });
     };
    
-    return Mystock;
+    return MyStock;
   };
   

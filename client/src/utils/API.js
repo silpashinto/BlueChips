@@ -53,6 +53,6 @@ export default {
   },
   signIn: function(userData){
     return axios.post("/api/user/signin", userData);
-  },
+  } 
 
 };
