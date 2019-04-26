@@ -35,10 +35,6 @@ export default {
     console.log("chart query is " ,BASEURL + query);
     return axios.get(BASEURL + query + '/chart/6m');
   },
-  // getHoldings: function() {
-  //   console.log("getting holdings from http://localhost:3000/holdings");
-  //   return axios.get("http://localhost:3000/holdings");
-  // },
   signUp: function(userData){
     return axios.post("/api/user/signup", userData);
   },

@@ -17,7 +17,8 @@ class Holdings extends Component {
 
     //load holdings
     loadHoldings = () => {
-        API.getHoldings()
+        
+        API.getHoldings(this.state.userId)
             .then( res => this.setState({holdings: res.data}))
             .catch(err => console.log(err));
     };

@@ -4,8 +4,20 @@ const db = require("../models");
 module.exports = {
 
   findholdings: function(req, res) {
+    
+    userId = req.headers.referer;
+    userId = userId.split("/");
+    userId = userId.pop()
+    
+    console.log(userId);
+  
     db.MyStock
-      .findAll()
+      .findAll({
+        where: {
+          userId: userId,
+          stockStatusId: 2
+        }
+      })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

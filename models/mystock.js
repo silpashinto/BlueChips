@@ -14,17 +14,13 @@ module.exports = function(sequelize, DataTypes) {
             len: [1]
           }
         },
-        // mystockTicker: {
-        //   type: DataTypes.STRING,
-        //   allowNull: false
-        // },
-        // stockstatusId: {
-        //   type: DataTypes.INTEGER,
-        //   allowNull: false,
-        //   validate: {
-        //     len: [1]
-        //   }
-        // },
+        stockstatusId: {
+          type: DataTypes.INTEGER,
+          allowNull: false,
+          validate: {
+            len: [1]
+          }
+        },
         numberofShares:{
             type: DataTypes.INTEGER
         },
