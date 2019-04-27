@@ -4,7 +4,7 @@ import API from "../../utils/API";
 import "./holdings.css";
 
 class Holdings extends Component {
-    
+
     state = {
         holdings: [],
         userId: this.props.match.params.userid
@@ -17,9 +17,9 @@ class Holdings extends Component {
 
     //load holdings
     loadHoldings = () => {
-        
+
         API.getHoldings(this.state.userId)
-            .then( res => this.setState({holdings: res.data}))
+            .then(res => this.setState({ holdings: res.data }))
             .catch(err => console.log(err));
     };
 
@@ -29,53 +29,52 @@ class Holdings extends Component {
             <Container>
                 <Row>
                     <Col size="md-12">
-                        {/* <Searches /> */}
-                        {/* <h1>My Current Holdings</h1> */}
-                        </Col>
+                    </Col>
                     <Col size="md-10">
-                       
+
                         <div className="card text-white bg-light mb-3 stkTable">
-                        <div className="card-header"></div>
-                        <div className="card-body">
-                            <div className="card-text"><h3>My Current Stock Holdings</h3>
-                            <table className="table">
-                                <thead className="holdingsTableHeader">
-                                <tr>
-                                    <th scope="col">Symbol</th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col">Shares</th>
-                                    <th scope="col">Total Investment</th>
-                                </tr>
-                                </thead>
+                            <div className="card-header"></div>
+                            <div className="card-body">
+                                <div className="card-text"><h3>My Current Stock Holdings</h3>
+                                    <table className="table">
+                                        <thead className="holdingsTableHeader">
+                                            <tr>
+                                                <th scope="col">Symbol</th>
+                                                <th scope="col">Price</th>
+                                                <th scope="col">Shares</th>
+                                                <th scope="col">Total Investment</th>
+                                            </tr>
+                                        </thead>
 
-                                {this.state.holdings.map(holding => {
+                                        {this.state.holdings.map(holding => {
 
-                                    let totalInvestment = holding.numberofShares * holding.price;
+                                            let totalInvestment = holding.numberofShares * holding.price;
 
-                                    return (
-                                        <tbody className = "holdingsTableBody">
-                                        <tr>
-                                        {/* <th scope="row"><Link to={"/stock/" + item.symbol}>{item.symbol}<br /><small>{item.companyName}</small></Link></th> */}
-                                        <td>{holding.stockTicker}</td>
-                                        <td>{holding.price}</td>
-                                        <td>{holding.numberofShares}</td>
-                                        <td>{totalInvestment}</td>
+                                            return (
+                                                <tbody className="holdingsTableBody">
+                                                    <tr>
+                                                        {/* <th scope="row"><Link to={"/stock/" + item.symbol}>{item.symbol}<br /><small>{item.companyName}</small></Link></th> */}
+                                                        <td>{holding.stockTicker}</td>
+                                                        <td>{holding.price}</td>
+                                                        <td>{holding.numberofShares}</td>
+                                                        <td>{totalInvestment}</td>
 
-                
-                                    </tr>
-                                    </tbody>
-                                )
-                                }
-                                )}
-                            </table>
+
+                                                    </tr>
+                                                </tbody>
+                                            )
+                                        }
+                                        )}
+                                    </table>
+                                </div>
                             </div>
                         </div>
-                        </div>  
-                        
+
                     </Col>
-                </Row>     
+                </Row>
             </Container>
-        )};
+        )
+    };
 };
-   
+
 export default Holdings;

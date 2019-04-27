@@ -71,7 +71,7 @@ class Searches extends Component {
                 <div>
                     <h1>Stock Search Error</h1>
                     <h3>Please be sure to enter a valid stock ticker symbol !</h3>
-                    <a href="javascript:void(0);" onClick={() => this.closeModal()}>Close</a>
+                    <button onClick={() => this.closeModal()}>Close</button>
                 </div>
             </Modal>
         <ResultList results={this.state.results} showResults={this.state.showResults} />
