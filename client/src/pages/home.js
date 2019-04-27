@@ -6,16 +6,15 @@ import { Col, Row, Container } from "../components/Grid";
 import Searches from "../components/Search/SearchResultContainer";
 import News from "../components/News/NewsResultContainer";
 import Stocks from "../components/Stocks";
-class Home extends Component {
 
- 
+class Home extends Component {
 
   render() {
     return (
       <Container>
         <Row>
         <Col size="md-8">
-          <Searches /> 
+              <Searches /> 
               <Stocks />
           </Col>
           <Col size="md-4">

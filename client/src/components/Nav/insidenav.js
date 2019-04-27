@@ -10,7 +10,7 @@ function Insidenav(props) {
         <nav class="nav nav-pills justify-content-end">
            
             <a className="btn btn-secondary nav-item nav-link" href={"/holdings/" + props.userid}>Holdings</a>
-            <a className="btn btn-secondary nav-item nav-link" href="#">WatchList</a>
+            <a className="btn btn-secondary nav-item nav-link" href={"/watchlist/" + props.userid}>WatchList</a>
             <a className="btn btn-secondary nav-item nav-link" href="/">SignOut</a>
         </nav>
         </div>

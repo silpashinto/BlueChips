@@ -1,5 +1,6 @@
 import React from "react";
 import "./search.css";
+import { Link } from "react-router-dom";
 
 function ResultList(props) {
   if (props.showResults===true) {
@@ -10,7 +11,6 @@ function ResultList(props) {
               <tr>
                 <th scope="col"></th>
                 <th scope="col">Date</th>
-                <th scope="col">Ticker</th>
                 <th scope="col">Company</th>
                 <th scope="col">Sector</th>
                 <th scope="col">Close</th>
@@ -19,9 +19,9 @@ function ResultList(props) {
             </thead>
             <tbody>
               <tr>
-                <th scope="row"></th>
+                {/* <th scope="row"></th> */}
+                <th scope="row"><Link to={"/stock/" + props.results.symbol}>{props.results.symbol}</Link></th>
                 <td>{props.results.latestTime}</td>
-                <td>{props.results.symbol}</td>
                 <td>{props.results.companyName}</td>
                 <td>{props.results.sector}</td>
                 <td>{props.results.close}</td>
