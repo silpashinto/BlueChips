@@ -7,11 +7,12 @@ import { Link } from "react-router-dom";
 import Company from "../Company";
 
 
+
 class Holdings extends Component {
 
     state = {
         holdings: [],
-        company: [],
+        ticker: "",
         userId: this.props.match.params.userid
     };
 
@@ -29,6 +30,10 @@ class Holdings extends Component {
             .catch(err => console.log(err));
     };
 
+    //set ticker on click
+    setticker(t){
+        this.setState({ticker: t});
+    }
     
     render() {
 
@@ -37,9 +42,8 @@ class Holdings extends Component {
             <Container>
                 <div className = 'container1'>
                 <Row>
+
                     <Col size="md-12">
-                    </Col>
-                    <Col size="md-10">
 
                         {/* Holdings Table */}
                         <div className="card text-white bg-light mb-3 stkTable">
@@ -55,10 +59,7 @@ class Holdings extends Component {
                                                 <th scope="col">Total Investment</th>
                                             </tr>
                                         </thead>
-
-                                        
-
-                                            
+                                                                           
                                             {this.state.holdings.map(holding => {
 
                                             let totalInvestment = holding.numberofShares * holding.price;
@@ -68,9 +69,9 @@ class Holdings extends Component {
                                                
                                                 <tbody className="holdingsTableBody" key={holding.stockTicker}>
                                                     <tr>
-                                                        {/* <th scope="row"><Link to={"/holdings/" + {user}} onClick={this.loadCompany(holding.stockTicker)}><br />{holding.stockTicker}</Link></th> */}
+                                                        <th scope="row"><Link to={"/holdings/" + this.state.userId }><br />{holding.stockTicker.toUpperCase()} </Link></th>
                                                         {/* <th scope='row'><Link to="/holdings/{this.state.userId}" onClick={this.loadCompany(holding.stockTicker)}>{holding.stockTicker}</Link></th> */}
-                                                        <td>{holding.stockTicker}</td>
+                                                        {/* <td>{holding.stockTicker.toUpperCase()} </td> */}
                                                         <td>{holding.price}</td>
                                                         <td>{holding.numberofShares}</td>
                                                         <td>{totalInvestment}</td>
@@ -79,7 +80,7 @@ class Holdings extends Component {
                                                 </tbody>
                                                
                                             )
-                                        }
+                                            }
                                         
                                         )}
                                     </table>
@@ -87,7 +88,7 @@ class Holdings extends Component {
                             </div>
                         </div>
 
-                        <Company symbols={this.state.holdings}></Company>
+                        <Company tick={this.state.ticker} ></Company>
 
                     </Col>
                    

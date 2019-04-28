@@ -7,31 +7,28 @@ class Company extends Component {
 
     state = {
         company: [],
-        symbol: ''
+        ticker: "ge"
     }
 
-
-    componentDidMount(){
-        this.loadCompany();
+    componentDidMount(tick){
+        console.log("props line 14" , tick);
+        this.loadCompany(tick);
     }
-
 
     //load company
-    loadCompany = (props) => {
-        console.log(props);
-        API.getCompany(props.symbols)
+    loadCompany = (tick) => {
+        this.setState({ticker: tick})
+        API.getCompany(this.state.ticker)
             .then(res => this.setState({ company: res.data }))
-            .catch(err => console.log(err));
-    };
-
- 
-    render() {
-
+            .catch(err => console.log(err));     
+    }   
     
+            
+    render () {
+
         return (
-
-
-        <div>
+            <Container>
+            <Col size="md-12">
             <div className="card text-white bg-light mb-3 stkTable">
                 <div className="card-header"></div>
                 <div className="card-body">
@@ -50,38 +47,38 @@ class Company extends Component {
                                 </tr>
                             </thead>
 
-                            {this.state.company.map(comp => {
+                         
 
-                                return (
+                               
                                     
-                                    <tbody className="companyTableBody" key={comp.companyName}>
+                                    <tbody className="companyTableBody" key={this.state.company.companyName}>
                                         <tr>
                                             
-                                            <td>{comp.companyName}</td>
-                                            <td>{comp.exchange}</td>
-                                            <td>{comp.industry}</td>
-                                            <td>{comp.website}</td>
-                                            <td>{comp.description}</td>
-                                            <td>{comp.CEO}</td>
-                                            <td>{comp.sector}</td>
+                                            <td>{this.state.company.companyName}</td>
+                                            <td>{this.state.company.exchange}</td>
+                                            <td>{this.state.company.industry}</td>
+                                            <td>{this.state.company.website}</td>
+                                            <td>{this.state.company.description}</td>
+                                            <td>{this.state.company.CEO}</td>
+                                            <td>{this.state.company.sector}</td>
                                             
                                         </tr>
                                     </tbody>
                                     
                                 )
-                            }
-                            )}
+                            
+                            
                         </table>
                     </div>
                 </div>
-        </div>
-    </div>
+            </div>
+            </Col>
+        
+        </Container>
 
-    )
     
-    }
-
+        )
 }
-
+}
 
 export default Company;
