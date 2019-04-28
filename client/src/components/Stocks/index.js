@@ -7,7 +7,8 @@ class Stock extends Component {
   state = {
      activeStocks: [],
      infocusStocks: [],
-     gainers:[]
+     gainers:[],
+     UserId:''
   };
 
   // // When the component mounts, load the next dog to be displayed
@@ -60,7 +61,6 @@ class Stock extends Component {
       </div>
     );
     }
-  
   
 }
 export default Stock;

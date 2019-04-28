@@ -6,6 +6,7 @@ import "./style.css";
 import Deletebutton from "../DeleteBtn";
 import API from "../../utils/API"
 import InsideNav from "./insidenav";
+import UserProfile from "../Userprofile";
 
 class Nav extends Component {
 
@@ -16,10 +17,9 @@ class Nav extends Component {
       email: '',
       password: '',
       UserId: ''
-
     }
   }
-
+ 
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
     const { name, value } = event.target;
@@ -46,12 +46,13 @@ class Nav extends Component {
         email: this.state.email,
         password: this.state.password
 
-      }).then(res => 
+      }).then(res =>
 
-        this.setState({
-          UserId: res.data.userId
-        }),
-        this.closeModal()
+         this.setState({
+           UserId: res.data.userId
+       }),
+       UserProfile.setuserId(this.state.UserId),
+         this.closeModal(),
       )
         .catch(err => console.log(err));
     }
@@ -65,7 +66,9 @@ class Nav extends Component {
 
           this.setState({
             UserId: res.data.userId
-          }),
+        }),
+        UserProfile.setuserId(this.state.UserId),
+
           this.closeModal())
         .catch(err => console.log(err));
     }
@@ -86,8 +89,11 @@ class Nav extends Component {
     });
   }
   render() {
+    console.log("x" +this.state.UserId);
+    UserProfile.setuserId(this.state.UserId);
+
     let nav;
-    if (this.state.UserId === '') {
+     if (this.state.UserId ==="") {
       nav = <div className="nav justify-content-end items"> &nbsp;
       <button type="button" className="btn btn-info" data-toggle="button" aria-pressed="false" onClick={() => this.openModal("signIn")}> SignIn</button> &nbsp;
         <section>
@@ -125,12 +131,12 @@ class Nav extends Component {
         <button type="button" className="btn btn-secondary" data-toggle="button" aria-pressed="false" onClick={() => this.openModal("signUp")}>
           SignUp</button> &nbsp;
       </div>
-    }
-    else {
+     }
+     else {
       nav = <InsideNav userid={this.state.UserId} />
     }
     return (
-      <div>{this.state.userId}
+      <div>
         <nav className="nav nav-pills nav-fill">
           <Link to="/"><img src={image1} alt="logo" className="img-thumbnail logo"></img></Link>
           <Link className="nav-item nav-link heading" to="/">Blue Chips</Link>

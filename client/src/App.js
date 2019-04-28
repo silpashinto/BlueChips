@@ -1,10 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Nav from "./components/Nav";
 import Home from "./pages/home"
 import Stock from "./pages/stock"
 import Holdings from "./pages/holdings"
 import "./App.css";
+import Nav from "./components/Nav";
+
 function App() {
    return (
     <Router>
@@ -14,6 +15,7 @@ function App() {
           <Route exact path="/stock/:symbol" component={Stock} />
           <Route exact path="/" component={Home} />
          <Route exact path='/holdings/:userid' component={Holdings} />
+         <Route exact path='/mystocks/:userid' component={Home} />
          <Route exact path='/signout' component={Home} />
 
         </Switch>

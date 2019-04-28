@@ -10,6 +10,7 @@ import Stocks from "../components/Stocks";
 class Home extends Component {
 
   render() {
+
     return (
       <Container>
         <Row>
@@ -17,14 +18,17 @@ class Home extends Component {
               <Searches /> 
               <Stocks />
           </Col>
-          <Col size="md-4">
-              <News />                       
-          </Col>         
         </Row>
         <Row>
-          <Col size="md-12">          
+          <Col size="md-8">
+            <Searches />
+            <Stocks />
+          </Col>
+          <Col size="md-4">
+            <News />
           </Col>
         </Row>
+
         <Row>
           <Col size="md-12">
             <footer>
