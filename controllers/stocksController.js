@@ -3,26 +3,52 @@ const db = require("../models");
 // Defining methods for the stocksController
 module.exports = {
 
-  findholdings: function (req, res) {
-    db.MyStock
-      .findAll()
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
+ findholdings: function(req, res) {
 
-  findwatchlist: function (req, res) {
-    db.MyStock
-      .findAll()
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
+   userId = req.headers.referer;
+   userId = userId.split("/");
+   userId = userId.pop()
 
-  findById: function (req, res) {
-    db.MyStock
-      .findById(req.params.id)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
+   console.log(userId);
+
+   db.MyStock
+     .findAll({
+       where: {
+         userId: userId,
+         stockStatusId: 2
+       }
+     })
+     .then(dbModel => res.json(dbModel))
+     .catch(err => res.status(422).json(err));
+ },
+
+
+ findwatchlist: function(req, res) {
+
+   userId = req.headers.referer;
+   userId = userId.split("/");
+   userId = userId.pop()
+
+   console.log("watchlist userid",userId);
+
+   db.MyStock
+     .findAll({
+       where: {
+         userId: userId,
+         stockStatusId: 1
+       }
+     })
+     .then(dbModel => res.json(dbModel))
+     .catch(err => res.status(422).json(err));
+ },
+
+
+ findById: function(req, res) {
+   db.MyStock
+     .findById(req.params.id)
+     .then(dbModel => res.json(dbModel))
+     .catch(err => res.status(422).json(err));
+ },
   create: function (req, res) {
     db.MyStock
       .create(req.body)
@@ -35,5 +61,4 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   }
-
 };

@@ -14,8 +14,9 @@ class Home extends Component {
     return (
       <Container>
         <Row>
-          <Col size="md-12">
-            {/* <Nav /><br/> */}
+        <Col size="md-8">
+              <Searches /> 
+              <Stocks />
           </Col>
         </Row>
         <Row>
