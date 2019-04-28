@@ -7,13 +7,6 @@ module.exports = function(sequelize, DataTypes) {
           autoIncrement: true,
           primaryKey: true
         },
-        userId: {
-          type: DataTypes.INTEGER,
-          allowNull: false,
-          validate: {
-            len: [1]
-          }
-        },
         stockstatusId: {
           type: DataTypes.INTEGER,
           allowNull: false,

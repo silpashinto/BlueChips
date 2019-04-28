@@ -52,6 +52,15 @@ export default {
   },
   signIn: function(userData){
     return axios.post("/api/user/signin", userData);
+  },
+
+  insertIntostock:function(stockDetails){    
+    console.log(stockDetails);
+    return axios.post("/api/stocks/main",stockDetails)
+  },
+  insertIntoMystock:function(stockDetails){    
+    console.log(stockDetails);
+    return axios.post("/api/stocks/mystocks",stockDetails)
   }
 
 };

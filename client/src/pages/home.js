@@ -11,6 +11,7 @@ import Footer from "../components/Footer";
 class Home extends Component {
 
   render() {
+
     return (
       <Container>
         <Row>
@@ -18,15 +19,29 @@ class Home extends Component {
               <Searches /> 
               <Stocks />
           </Col>
-          <Col size="md-4">
-              <News />                       
-          </Col>         
         </Row>
-  
-     
-          <Footer />
-        
-        
+        <Row>
+          <Col size="md-8">
+            <Searches />
+            <Stocks />
+          </Col>
+          <Col size="md-4">
+            <News />
+          </Col>
+        </Row>
+
+        <Row>
+          <Col size="md-12">
+            <footer>
+
+              <h4> </h4>
+
+            </footer>
+
+
+          </Col>
+        </Row>
+
       </Container>
 
     );

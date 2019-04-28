@@ -16,5 +16,12 @@ router.route("/watchlist")
 router.route("/:id")
   .get(stocksController.findById);
 
+  // Matches with "/api/stocks/mystocks"
+  router.route("/mystocks")
+  .post(stocksController.create);
+
+    // Matches with "/api/stocks/main"
+    router.route("/main")
+    .post(stocksController.createStock);
 
 module.exports = router;
