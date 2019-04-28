@@ -1,6 +1,11 @@
 import React from "react";
 import "./style.css";
+import UserProfile from "../Userprofile";
 
+
+function unsetUser(){
+UserProfile.setuserId();
+}
 function Insidenav(props) {
     return (
         <div>
@@ -11,7 +16,7 @@ function Insidenav(props) {
            
             <a className="btn btn-secondary nav-item nav-link" href={"/holdings/" + props.userid}>Holdings</a>
             <a className="btn btn-secondary nav-item nav-link" href="#">WatchList</a>
-            <a className="btn btn-secondary nav-item nav-link" href="/">SignOut</a>
+            <a className="btn btn-secondary nav-item nav-link" href="/signout" onClick={() => unsetUser}>SignOut</a>
         </nav>
         </div>
         

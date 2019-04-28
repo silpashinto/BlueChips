@@ -6,26 +6,28 @@ import { Col, Row, Container } from "../components/Grid";
 import Searches from "../components/Search/SearchResultContainer";
 import News from "../components/News/NewsResultContainer";
 import Stocks from "../components/Stocks";
+
 class Home extends Component {
 
- 
-
   render() {
+
     return (
       <Container>
         <Row>
-        <Col size="md-8">
-          <Searches /> 
-              <Stocks />
+          <Col size="md-12">
+            {/* <Nav /><br/> */}
           </Col>
-          <Col size="md-4">
-              <News />                       
-          </Col>         
         </Row>
         <Row>
-          <Col size="md-12">          
+          <Col size="md-8">
+            <Searches />
+            <Stocks />
+          </Col>
+          <Col size="md-4">
+            <News />
           </Col>
         </Row>
+
         <Row>
           <Col size="md-12">
             <footer>

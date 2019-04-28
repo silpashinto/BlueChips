@@ -7,24 +7,13 @@ module.exports = function(sequelize, DataTypes) {
           autoIncrement: true,
           primaryKey: true
         },
-        userId: {
+        stockstatusId: {
           type: DataTypes.INTEGER,
           allowNull: false,
           validate: {
             len: [1]
           }
         },
-        // mystockTicker: {
-        //   type: DataTypes.STRING,
-        //   allowNull: false
-        // },
-        // stockstatusId: {
-        //   type: DataTypes.INTEGER,
-        //   allowNull: false,
-        //   validate: {
-        //     len: [1]
-        //   }
-        // },
         numberofShares:{
             type: DataTypes.INTEGER
         },
