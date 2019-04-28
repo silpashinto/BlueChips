@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Watchlist from "../components/Watchlist";
+import Footer from "../components/Footer";
 
 
 function showWatchlist(){
 
-
-    return (
+ 
+        return (
 
         <Container>
 
@@ -16,11 +17,13 @@ function showWatchlist(){
                 </Col>
             </Row>
             
+            <Footer />
         </Container>
 
-    );
-};
+        );
+    
 
+};
 
 
 export default Watchlist;

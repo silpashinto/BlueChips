@@ -6,6 +6,7 @@ import Stocksprofile from "../components/Stocks/Stockprofile";
 // import Searches from "../components/Search/SearchResultContainer";
 // import Insidenav from "../components/Nav/insidenav"
 import Chart from "../components/Stocks/Chart";
+import Footer from "../components/Footer";
 
 
 class Stock extends Component {
@@ -59,19 +60,12 @@ class Stock extends Component {
                         <Stocksprofile props={this.state.stockdetails} />
                     </Col>
                     <Col size="md-6">
-                    <Chart props={this.state.stockchart} />
-                    </Col>
-                </Row>
-                <Row>
-                    <Col size="md-12">
-                        <footer>
-
-                            {/* <h3> Footer stuff here ffffffffffffffffffffffffffffffff !</h3> */}
-
-                        </footer>
+                        <Chart props={this.state.stockchart} />
                     </Col>
                 </Row>
 
+            <Footer />
+            
             </Container>
 
         );

@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Holdings from "../components/Holdings";
+import Footer from "../components/Footer";
+import Company from "../components/"
 
 
 function showHoldings(){
 
-   
+    
         return (
 
             <Container>
@@ -19,12 +21,12 @@ function showHoldings(){
                       <Holdings />                      
                     </Col>
                 </Row>
-               
+            <Footer />
             </Container>
 
         );
     };
 
-    
+ 
     
 export default Holdings;

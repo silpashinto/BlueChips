@@ -10,7 +10,7 @@ router.route("/holdings")
 // Matches with "/api/stocks/watchlist"
 router.route("/watchlist")
   .get(stocksController.findwatchlist);
-  
+
 
   // Matches with "/api/stocks/:id"
 router.route("/:id")

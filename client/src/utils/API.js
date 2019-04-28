@@ -41,6 +41,9 @@ export default {
   getHoldings: function(userData){
     return axios.get("/api/stocks/holdings", userData);
   },
+  getCompany: function(query){
+    return axios.get(BASEURL + query + '/company');
+  },
   getWatchlist: function(userData){
     return axios.get("/api/stocks/watchlist", userData);
   },

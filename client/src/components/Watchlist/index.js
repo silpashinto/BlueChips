@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Col, Row, Container } from "../Grid";
 import API from "../../utils/API";
 import "./watchlist.css";
+import Footer from "../Footer";
 
 class Watchlist extends Component {
 
@@ -17,12 +18,15 @@ class Watchlist extends Component {
 
     //load watchlist
     loadWatchlist = () => {
+
+        console.log("making axios getWatchlist call");
         API.getWatchlist(this.state.userId)
             .then(res => this.setState({ watchlist: res.data }))
             .catch(err => console.log(err));
     };
 
     render() {
+     
         return (
 
             <Container>
@@ -64,8 +68,11 @@ class Watchlist extends Component {
                         </div>
 
                     </Col>
+                    
                 </Row>
+                <Footer />
             </Container>
+
         )
     };
 };

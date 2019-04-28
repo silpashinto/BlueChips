@@ -68,10 +68,10 @@ class Searches extends Component {
           handleInputChange={this.handleInputChange}
         />
         <Modal visible={this.state.modal} width="400" height="300" effect="fadeInUp" onClickAway={() => this.closeModal()}>
-                <div>
+                <div className="modalMessage">
                     <h1>Stock Search Error</h1>
                     <h3>Please be sure to enter a valid stock ticker symbol !</h3>
-                    <button onClick={() => this.closeModal()}>Close</button>
+                    <button className="btn" onClick={() => this.closeModal()}>Close</button>
                 </div>
             </Modal>
         <ResultList results={this.state.results} showResults={this.state.showResults} />

@@ -6,6 +6,7 @@ import { Col, Row, Container } from "../components/Grid";
 import Searches from "../components/Search/SearchResultContainer";
 import News from "../components/News/NewsResultContainer";
 import Stocks from "../components/Stocks";
+import Footer from "../components/Footer";
 
 class Home extends Component {
 
@@ -21,23 +22,13 @@ class Home extends Component {
               <News />                       
           </Col>         
         </Row>
-        <Row>
-          <Col size="md-12">          
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-12">
-            <footer>
-
-              <h4> </h4>
-
-            </footer>
-
-
-          </Col>
-        </Row>
-
+  
+     
+          <Footer />
+        
+        
       </Container>
+
     );
   }
 }

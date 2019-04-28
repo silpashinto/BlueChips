@@ -29,7 +29,7 @@ module.exports = {
     userId = userId.split("/");
     userId = userId.pop()
     
-    console.log(userId);
+    console.log("watchlist userid",userId);
   
     db.MyStock
       .findAll({
