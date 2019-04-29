@@ -1,5 +1,6 @@
 const db = require("../models");
 
+
 // Defining methods for the stocksController
 module.exports = {
 
@@ -9,6 +10,7 @@ module.exports = {
    userId = userId.split("/");
    userId = userId.pop()
 
+ 
    console.log(userId);
 
    db.MyStock
@@ -29,7 +31,8 @@ module.exports = {
    userId = userId.split("/");
    userId = userId.pop()
 
-   console.log("watchlist userid",userId);
+
+  console.log("watchlist userid",userId);
 
    db.MyStock
      .findAll({

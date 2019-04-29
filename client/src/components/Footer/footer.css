@@ -3,7 +3,7 @@
     background-image: url("../../images/footer_pic2.jpg");
     height: 60px;
     line-height: 60px;
-    position:relative;
+    position:fixed;
     left:0;
     bottom:0;
     right:0;

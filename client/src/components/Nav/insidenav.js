@@ -14,8 +14,8 @@ function Insidenav(props) {
     </button> */}
         <nav class="nav nav-pills justify-content-end">           
             <a className="btn btn-secondary nav-item nav-link" href={"/holdings/" + props.userid}>Holdings</a>
-            <a className="btn btn-secondary nav-item nav-link" href="/signout" onClick={() => unsetUser}>SignOut</a>
             <a className="btn btn-secondary nav-item nav-link" href={"/watchlist/" + props.userid}>WatchList</a>
+            <a className="btn btn-secondary nav-item nav-link" href="/signout" onClick={() => unsetUser}>SignOut</a>
         </nav>
         </div>
         

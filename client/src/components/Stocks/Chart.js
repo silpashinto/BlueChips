@@ -58,21 +58,15 @@ function Chart(props) {
         ]
     }
 
-
     return (
         <div>
             <h5>Daily Closing Price Last 6 Months</h5>
             <LineChart data={chartData} width="700" height="350" />
-            <h5>Daily Volume Last 6 Months</h5>
+            <h5>Daily Volume Last 6 Months (Per Thousand)</h5>
             <LineChart data={chartData1} width="700" height="350" />
         </div>
     )
 
-
-
-
 }
-
-
 
 export default Chart;
