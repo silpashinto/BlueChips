@@ -125,7 +125,8 @@ function Stocks(props, type) {
               return (
                 <tbody>
                   <tr>
-                    <th scope="row"><Link to={"/holdings/1"}>{item.symbol}<br /><small>{item.companyName}</small></Link></th>
+                    {/* <th scope="row"><Link to={"/holdings/1"}>{item.symbol}<br /><small>{item.companyName}</small></Link></th> */}
+                    <th scope="row"><Link to={"/stock/"+item.symbol}>{item.symbol}<br /><small>{item.companyName}</small></Link></th>
                     <td>{item.latestPrice}</td>
                     <td>{item.change}</td>
                     <td>{item.changePercent}</td>
