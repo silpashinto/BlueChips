@@ -43,8 +43,9 @@ function watchMe(symbol) {
               .catch(err => console.log(err))
           )
           .catch(err => console.log(err))
+        alert("Stock Added to WatchList");
 
-
+          
       })
       .catch(err => console.log(err));
   }
@@ -90,6 +91,7 @@ function holdMe(symbol) {
               .catch(err => console.log(err))
           )
           .catch(err => console.log(err))
+          alert("Stock Added to Holdings");
 
 
       })
@@ -109,7 +111,7 @@ function Stocks(props, type) {
         <p className="card-text">
           <table className="table">
             <thead>
-              
+
               <tr>
                 <th scope="col">Symbol</th>
                 <th scope="col">Price</th>
@@ -133,8 +135,8 @@ function Stocks(props, type) {
                     <td>{item.changePercent}</td>
                     <td>{item.iexVolume}</td>
                     <td>{item.avgTotalVolume}</td>
-                    <td><i onClick={() => watchMe(item.symbol)} className="fa fa-eye fa-2x" aria-hidden="true"></i></td>
-                    <td><i onClick={() => holdMe(item.symbol)} className="fa fa-briefcase fa-2x" aria-hidden="true"></i></td>
+                    <td><Link to="#"><i onClick={() => watchMe(item.symbol)} className="fa fa-eye fa-2x" aria-hidden="true"></i></Link></td>
+                    <td><Link to="#"><i onClick={() => holdMe(item.symbol)} className="fa fa-briefcase fa-2x" aria-hidden="true"></i></Link></td>
 
                   </tr>
                 </tbody>
