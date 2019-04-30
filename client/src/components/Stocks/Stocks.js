@@ -109,6 +109,7 @@ function Stocks(props, type) {
         <p className="card-text">
           <table className="table">
             <thead>
+              
               <tr>
                 <th scope="col">Symbol</th>
                 <th scope="col">Price</th>
