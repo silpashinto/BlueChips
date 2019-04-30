@@ -1,6 +1,8 @@
 import React from "react";
 import "./style.css";
 import UserProfile from "../Userprofile";
+import { Link } from "react-router-dom";
+
 
 
 function unsetUser(){
@@ -13,8 +15,8 @@ function Insidenav(props) {
         Welcome <span class="badge badge-light">Silpa</span>
     </button> */}
         <nav class="nav nav-pills justify-content-end">           
-            <a className="btn btn-secondary nav-item nav-link" href={"/holdings/" + props.userid}>Holdings</a>
-            <a className="btn btn-secondary nav-item nav-link" href={"/watchlist/" + props.userid}>WatchList</a>
+            <Link className="btn btn-secondary nav-item nav-link" to={"/holdings/" + props.userid}>Holdings</Link>
+            <Link className="btn btn-secondary nav-item nav-link" to={"/watchlist/" + props.userid}>WatchList</Link>
             <a className="btn btn-secondary nav-item nav-link" href="/signout" onClick={() => unsetUser}>SignOut</a>
         </nav>
         </div>

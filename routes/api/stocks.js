@@ -6,7 +6,6 @@ const stocksController = require("../../controllers/stocksController");
 router.route("/holdings")
   .get(stocksController.findholdings);
 
-
 // Matches with "/api/stocks/watchlist"
 router.route("/watchlist")
   .get(stocksController.findwatchlist);

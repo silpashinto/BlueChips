@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Moment from 'react-moment';
 import 'moment-timezone';
 
-function Stockorofile(props) {
+function Stocksprofile(props) {
     console.log(props);
     return (
         <div className="table-responsive">
@@ -54,4 +54,4 @@ function Stockorofile(props) {
     );
 }
 
-export default Stockorofile;
+export default Stocksprofile;
