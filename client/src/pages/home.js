@@ -8,18 +8,20 @@ import News from "../components/News/NewsResultContainer";
 import Stocks from "../components/Stocks";
 import Footer from "../components/Footer";
 
+
 class Home extends Component {
 
+  
   render() {
 
-    return (
+      return (
       <Container>
-       
+            
         <Row>
           <Col size="md-8">
             <Searches />
-            <Stocks />
-          </Col>
+            <Stocks />            
+            </Col>
           <Col size="md-4">
             <News />
           </Col>
@@ -28,12 +30,8 @@ class Home extends Component {
         <Row>
           <Col size="md-12">
             <footer>
-
               <h4> </h4>
-
             </footer>
-
-
           </Col>
         </Row>
 
