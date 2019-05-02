@@ -4,6 +4,7 @@ const BASEURL = "https://api.iextrading.com/1.0/stock/";
 const INFOCUSURL = "https://api.iextrading.com/1.0/stock/market/list/infocus";
 const ACTIVESTOCKSURL = "https://api.iextrading.com/1.0/stock/market/list/mostactive";
 const GAINERSURL ="https://api.iextrading.com/1.0/stock/market/list/gainers";
+const LOSERSURL="https://api.iextrading.com/1.0/stock/market/list/losers";
 
 // Export an object with a "search" methods that searches the API for the passed stock ticker or get the news
 export default {
@@ -30,6 +31,10 @@ export default {
   getGainers:function(){
     console.log(GAINERSURL);
     return axios.get(GAINERSURL);
+  },
+  getLosers:function(){
+    console.log(LOSERSURL);
+    return axios.get(LOSERSURL);
   },
   getChart6m: function(query) {
     console.log("chart query is " ,BASEURL + query);

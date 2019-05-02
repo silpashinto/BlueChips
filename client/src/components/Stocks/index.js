@@ -8,6 +8,7 @@ class Stock extends Component {
      activeStocks: [],
      infocusStocks: [],
      gainers:[],
+     losers:[],
      UserId:''
   };
 
@@ -16,6 +17,7 @@ class Stock extends Component {
     this.loadActiveStocks();
     this.loadInfocusStocks();
     this.loadGainerStocks();
+    this.loadLoserStocks();
   }
 
   //loading Active stocks in the home page
@@ -49,14 +51,41 @@ class Stock extends Component {
    )
    .catch(err => console.log(err));
 };
+ //loading losers stocks in the home page
+ loadLoserStocks=  () => {
+  API.getLosers()
+   .then( res => 
+      this.setState({
+       losers: res.data
+     })
+   )
+   .catch(err => console.log(err));
+};
 
   render() {
 
     return (
       <div>       
-      { Stocks(this.state.activeStocks, "Active Stocks") }
-      { Stocks(this.state.infocusStocks, "Infocus Stocks") }
-      { Stocks(this.state.gainers, "Gainers") }
+
+
+<ul className="list-group">
+  <li className="list-group-item d-flex justify-content-between align-items-center">
+  { Stocks(this.state.activeStocks, "Active Stocks","aclass") }
+    
+  </li>
+  <li className="list-group-item d-flex justify-content-between align-items-center">
+  { Stocks(this.state.infocusStocks, "Infocus Stocks","iclass") }
+  
+  </li>
+  <li className="list-group-item d-flex justify-content-between align-items-center">
+  { Stocks(this.state.gainers, "Gainers","gclass") }   
+  </li>
+  <li className="list-group-item d-flex justify-content-between align-items-center">
+  { Stocks(this.state.losers, "Losers","lclass") }   
+  </li>
+</ul>
+     
+    
 
       </div>
     );
