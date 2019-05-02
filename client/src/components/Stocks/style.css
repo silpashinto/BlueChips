@@ -3,7 +3,7 @@
   color: #e74944;
 }
 .stkTable{
-  max-width: 50rem;
+  width: 50rem;
   float: left;
   font-size: 13px;
   color: black;
@@ -16,6 +16,9 @@
 }
 .stkTable a{
   color: white;
+}
+.dropdown{
+  float:right;
 }
 .my-4{
   border-top: 7px solid rgba(0,0,0,.1);
@@ -42,4 +45,12 @@
   float: right;
     padding-right: 20px;
     font-weight: bolder;
+}
+.red{
+  color: red;
+  font-weight: bolder;
+}
+.green{
+  color: green;
+  font-weight: bolder;
 }
